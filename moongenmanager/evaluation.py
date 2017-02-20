@@ -4,13 +4,14 @@ from datetime import datetime
 from moongenmanager.database import Database
 
 
-class Descrption:
-    def __init__(self, os_descr, type_descr):
+class Description:
+    def __init__(self):
         self.__id_descr = ''
-        self.os_descr = os_descr
+        self.os_descr = ''
+        self.type_descr = ''
         self.time_create_descr = datetime. \
             fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
-        self.type_descr = type_descr
+
 
     def get_id(self):
         return self._id_descr
@@ -20,7 +21,7 @@ class Descrption:
 
 
 class Result:
-    def __init__(self, *args, **kwargs):
+    def __init__(self, **kwargs):
         self.__id_resul = ''
         self.id_descr = kwargs.get('id_descr')
         self.runtime_resul = kwargs.get('runtime_resul')
@@ -40,11 +41,18 @@ class Result:
 
 class Evaluation:
     def __init__(self, **kwargs):
-        self._pkt_size = [64, 128, 256, 512, 1024, 1280, 1518, 9218]
-        self._runtime = [30, 60, 120, 240, 480]
-        self._trails = 20
-        self._db = Database()
+        self.__pkt_size = [64, 128, 256, 512, 1024, 1280, 1518, 9218]
+        self.__runtime = [30, 60, 120, 240, 480]
+        self.__trails = 20
+        self.__db = Database(**kwargs)
+        self.__m_bin = kwargs.get('m_dir') + 'MoonGen/build/MoonGen'
+        self.__m_config = ''
+        self.__m_script = ''
+        self.__descr = self.__set_description(self.__db,_kwargs.get('descr_obj'))
 
-    def run(self, descr: Descrption):
-        db
+    def run(self):
         for p in self._pkt_size:
+
+    def __set_description(db: Database, descr : Description):
+        d = db.save(descr)
+        return d

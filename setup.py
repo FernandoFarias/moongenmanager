@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='moongenmanager',
     version='0.1',
-    packages=[''],
+    packages=['moongenmanager'],
     url='',
     license='Apache 2.0',
     author='Fernando Farias',

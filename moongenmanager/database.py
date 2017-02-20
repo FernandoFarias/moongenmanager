@@ -1,16 +1,16 @@
 from mysql.connector import connect
 
-from moongenmanager.evaluation import Descrption, Result
+from moongenmanager.evaluation import Description, Result
 
 
 class Database:
-    def __init__(self, *args, **kwargs):
+    def __init__(self, **kwargs):
         self.__connection = connect(**kwargs)
         self.__connection.autocommit = True
 
     def save(self, *args):
         for arg in args:
-            if isinstance(arg, Descrption):
+            if isinstance(arg, Description):
                 query = self.__connection.cursor()
                 _add_description = ("INSERT INTO evaluation"
                                     "(desc_create_time, operating_sytem, "
@@ -21,6 +21,7 @@ class Database:
                 id_descr = query.lastrowid
                 arg.set_id(id_descr)
                 query.close()
+                return arg
             elif isinstance(arg, Result):
                 query = self.__connection.cursor()
                 _add_measured = ("INSERT INTO measured "
@@ -35,6 +36,7 @@ class Database:
                 id_resul = query.lastrowid
                 arg.set_id(id_resul)
                 query.close()
+                return arg
             else:
                 raise TypeError('Type object unknown')
 
