@@ -1,4 +1,5 @@
 import click
+from moongenmanager.evaluation import Description
 
 
 @click.group()
@@ -18,10 +19,25 @@ def cli():
 @click.option('-d', '--description', nargs=1, required=True,
               type=click.STRING, help='The evaluation description e.g (case1 or kernel 4.9)')
 @click.option('-b', '--database', type=click.STRING,
-              nargs=3, help='The database configuration e.g: 127.0.0.1 user password')
+              nargs=3, help='The database configuration e.g: 127.0.0.1 user password',
+              required=True)
 def cmd_eval(operating_system, type_evaluation,
-             lua_trafficgen_dir, description, databas):
-    pass
+             lua_trafficgen_dir, description, database):
+
+    descr = Description()
+    descr.os_descr = operating_system
+    descr.type_descr = type_evaluation
+    descr.type_descr = description
+
+    m_dir = lua_trafficgen_dir
+
+    eval_env = {'host': database[0], 'user': database[1],
+                'password': database[2],'database': 'moongen',
+                'descr_obj': descr, 'm_dir': m_dir}
+
+
+
+
 
 
 @cli.command('consult')
