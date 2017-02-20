@@ -1,7 +1,10 @@
 import time
-from datetime import datetime
+import moongenmanager
 
-from moongenmanager.database import Database
+
+from datetime import datetime
+from subprocess import check_output
+from pathlib import Path
 
 
 class Description:
@@ -12,9 +15,8 @@ class Description:
         self.time_create_descr = datetime. \
             fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
 
-
     def get_id(self):
-        return self._id_descr
+        return self.__id_descr
 
     def set_id(self, id):
         self.__id_descr = id
@@ -40,19 +42,120 @@ class Result:
 
 
 class Evaluation:
+
     def __init__(self, **kwargs):
         self.__pkt_size = [64, 128, 256, 512, 1024, 1280, 1518, 9218]
         self.__runtime = [30, 60, 120, 240, 480]
         self.__trails = 20
-        self.__db = Database(**kwargs)
+        self.__config_db = kwargs.get('config_db')
         self.__m_bin = kwargs.get('m_dir') + 'MoonGen/build/MoonGen'
-        self.__m_config = ''
-        self.__m_script = ''
-        self.__descr = self.__set_description(self.__db,_kwargs.get('descr_obj'))
+        self.__m_config = kwargs.get('m_dir') + 'trafficgen.lua'
+        self.__m_script = kwargs.get('m_dir') + 'opnfv-vsperf-cfg.lua'
+        self.__descr = self.__set_description(kwargs.get('descr_obj'))
 
-    def run(self):
-        for p in self._pkt_size:
+    def start(self):
+        for p in self.__pkt_size:
+            for rt in self.__runtime:
+                self.__runner(self.__trails, p, rt)
 
-    def __set_description(db: Database, descr : Description):
+    @staticmethod
+    def __set_description(self, descr: Description):
+
+        db = moongenmanager.database.Database(**self.__config_db)
         d = db.save(descr)
+        db.close()
         return d
+
+    def __set_result(self, result: Result):
+
+        db = moongenmanager.database.Database(**self.__config_db)
+        db.save(result)
+        db.close()
+
+    def __runner(self, trails, pkt_size, runtime):
+
+        r = moongenmanager.evaluation.Result()
+
+        for r in range(1, trails):
+            try:
+                self.__config_eval(pkt_size, runtime)
+            except RuntimeError as r:
+                print(r)
+
+            output = check_output(self.__m_bin + " " + self.__m_config+"  | grep Histogram")
+
+            r = self.__get_result(output)
+
+    def __config_eval(self, size, runtime):
+
+        conf = ("VSPERF {"
+                "nrFlows = 1024,"
+                "testType = \"latency\","
+                "latencyRunTime = %i,"
+                "runBidirec = false,"
+                "searchRunTime = 120,"
+                "validationRunTime = 120,"
+                "acceptableLossPct = 0.002,"
+                "frameSize = %i,"
+                "mppsPerQueue = 5,"
+                "queuesPerTask = 3,"
+                "ports = {0,1}"
+                "}" %(runtime+6, size))
+
+        if Path(self.__m_script).exists():
+            f = open(self.__m_script, 'w')
+            f.write(conf)
+            f.close()
+        else:
+            raise RuntimeError("Cannot access file")
+
+    def __get_result(self, output=''):
+
+        result = moongenmanager.evaluation.Result()
+        o = output.split(",")
+        result.avg_resul = o[1].strip().split(" ")[1]
+        result.std_resul = o[2].strip().split(" ")[1]
+
+        qtl = o[3].strip().split(" ")[1]
+
+        result.low_qtl_resul = qtl.split("/")[0]
+        result.median_qtl_resul = qtl.split("/")[1]
+        result.up_qtl_resul = qtl.split("/")[2]
+
+        result.id_descr = self.__descr.get_id()
+
+        return result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

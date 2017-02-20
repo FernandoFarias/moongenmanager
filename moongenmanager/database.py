@@ -40,9 +40,12 @@ class Database:
             else:
                 raise TypeError('Type object unknown')
 
-        def delete(self, table, id):
+    def delete(self, table, id):
 
-            query = self.__connection.cursor()
-            _del_action = ("DELETE FROM %s WHERE id=%i" % (table, id))
-            query.execute(_del_action)
-            query.close()
+        query = self.__connection.cursor()
+        _del_action = ("DELETE FROM %s WHERE id=%i" % (table, id))
+        query.execute(_del_action)
+        query.close()
+
+    def close(self):
+        self.__connection.close()
