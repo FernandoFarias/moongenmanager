@@ -1,7 +1,7 @@
+
 from mysql.connector import connect
 
 from moongenmanager.evaluation import Description, Result
-
 
 class Database:
     def __init__(self, **kwargs):
@@ -16,27 +16,30 @@ class Database:
                                     "(desc_create_time, operating_sytem, "
                                     "type_evaluation, desc_evaluation)"
                                     "VALUES "
-                                    "(%(os_descr)s, %(time_create_descr)s, %(type_descr)s) ")
+                                    "(%(time_create_descr)s, %(os_descr)s, %(type_descr)s, %(eval_descr)s) ")
                 query.execute(_add_description, arg.__dict__)
                 id_descr = query.lastrowid
                 arg.set_id(id_descr)
                 query.close()
                 return arg
             elif isinstance(arg, Result):
-                query = self.__connection.cursor()
-                _add_measured = ("INSERT INTO measured "
-                                 "(desc_evaluation_id, runtime, trail,"
-                                 "pkt_size, avg, std, low_qtl, media_qtl,up_qtl)"
-                                 "VALUES"
-                                 "(%(id_descr)i, %(runtime_resul)i,%(trail_resul)i,"
-                                 "%(avg_resul)f, %(std_resul)f, %(low_qtl_resul)f,"
-                                 "%(median_qtl_resul)f, %(up_qtl_resul)f)")
+                try:
+                    query = self.__connection.cursor()
+                    _add_measured = ("INSERT INTO measured "
+                                     "(desc_evaluation_id, runtime, trail,"
+                                     "pkt_size, avg, std, low_qtl, media_qtl, up_qtl)"
+                                     "VALUES"
+                                     "(%(id_descr)s, %(runtime_resul)s, %(trail_resul)s, %(pkt_size_resul)s,"
+                                     "%(avg_resul)s, %(std_resul)s, %(low_qtl_resul)s, %(median_qtl_resul)s,"
+                                     "%(up_qtl_resul)s)")
 
-                query.execute(_add_measured, arg.__dict__)
-                id_resul = query.lastrowid
-                arg.set_id(id_resul)
-                query.close()
-                return arg
+                    query.execute(_add_measured, arg.__dict__)
+                    id_resul = query.lastrowid
+                    arg.set_id(id_resul)
+                    query.close()
+                    return arg
+                except ValueError as vr:
+                    print (vr)
             else:
                 raise TypeError('Type object unknown')
 
