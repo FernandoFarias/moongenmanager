@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='moongenmanager',
     version='0.1',
-    packages=find_packages(),
+    packages=['moongenmanager'],
     install_requires=['Click'],
     include_package_data=True,
     url='',
