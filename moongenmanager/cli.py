@@ -3,7 +3,7 @@ import moongenmanager
 import logging
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - [%(name)s]:[%(levelname)s] - %(message)s')
-logger = logging.getLogger("moongenmanager.cli")
+logger = logging.getLogger("moongenmanager.cli.d")
 
 @click.group()
 def cli():
