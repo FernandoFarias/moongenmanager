@@ -1,10 +1,16 @@
 import click
-from moongenmanager.evaluation import Description
-
+import moongenmanager
+import logging
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - [%(name)s]:[%(levelname)s] - %(message)s')
+logger = logging.getLogger("moongenmanager.cli.d")
 
 @click.group()
 def cli():
     pass
+
+
+
 
 
 @cli.command('evaluate')
@@ -24,21 +30,22 @@ def cli():
 def cmd_eval(operating_system, type_evaluation,
              lua_trafficgen_dir, description, database):
 
-    descr = Description()
+    descr = moongenmanager.evaluation.Description()
     descr.os_descr = operating_system
     descr.type_descr = type_evaluation
-    descr.type_descr = description
+    descr.eval_descr = description
 
     m_dir = lua_trafficgen_dir
 
-    eval_env = {'host': database[0], 'user': database[1],
-                'password': database[2],'database': 'moongen',
+    config_db = {'host': database[0], 'user': database[1],
+                 'password': database[2], 'database': 'moongen'}
+
+    eval_env = {'config_db': config_db,
                 'descr_obj': descr, 'm_dir': m_dir}
 
-
-
-
-
+    evalu = moongenmanager.evaluation.Evaluation(**eval_env)
+    logger.info("######## New Evaluation Starting #########")
+    evalu.start()
 
 @cli.command('consult')
 def consult():
@@ -46,4 +53,6 @@ def consult():
 
 
 if __name__ == '__main__':
+    
+    
     cli()
