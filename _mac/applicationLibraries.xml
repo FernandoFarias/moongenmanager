@@ -37,5 +37,16 @@
       </CLASSES>
       <SOURCES />
     </library>
+    <library name="tabulator" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_unpkg.com_tabulator-tables@4.4.1_dist_js_tabulator.js" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_unpkg.com_tabulator-tables@4.4.1_dist_js_tabulator.js" />
+      </CLASSES>
+      <SOURCES />
+    </library>
   </component>
 </application>
