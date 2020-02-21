@@ -22,6 +22,14 @@
           <option name="url" value="https://github.com/fernnf/benchtraffic.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://gitlab.com/sdn-multilayer/optical-dp-emulation/transponder-oc-cassine-dp.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://gitlab.com" />
+          <option name="userName" value="fernnf@gmail.com" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Workspace/PyCharmProjects" />
