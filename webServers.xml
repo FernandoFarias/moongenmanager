@@ -21,6 +21,16 @@
           <option name="port" value="25" />
         </fileTransfer>
       </webServer>
+      <webServer id="3222cd15-e29b-4ac7-b657-4f0c01eabf19" name="root@localhost:25" url="http:///">
+        <fileTransfer host="localhost" port="25" accessType="SFTP">
+          <option name="port" value="25" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="d51ca0f0-e8ed-448f-ab25-4787f80cf2c5" name="root@localhost:25" url="http:///">
+        <fileTransfer host="localhost" port="25" accessType="SFTP">
+          <option name="port" value="25" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </application>
