@@ -6,27 +6,7 @@
           <option name="port" value="25" />
         </fileTransfer>
       </webServer>
-      <webServer id="b212da60-1efa-43de-b9ce-81ee460dc190" name="root@localhost:25" url="http:///">
-        <fileTransfer host="localhost" port="25" accessType="SFTP">
-          <option name="port" value="25" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="7e170100-e53b-42e5-b0a0-bacc15ccc090" name="root@localhost:25" url="http:///">
-        <fileTransfer host="localhost" port="25" accessType="SFTP">
-          <option name="port" value="25" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="e5842860-bb72-46dd-bc86-9f6b6f4168c2" name="root@localhost:25" url="http:///">
-        <fileTransfer host="localhost" port="25" accessType="SFTP">
-          <option name="port" value="25" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="3222cd15-e29b-4ac7-b657-4f0c01eabf19" name="root@localhost:25" url="http:///">
-        <fileTransfer host="localhost" port="25" accessType="SFTP">
-          <option name="port" value="25" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="d51ca0f0-e8ed-448f-ab25-4787f80cf2c5" name="root@localhost:25" url="http:///">
+      <webServer id="cf93f2ae-15c7-4941-86e6-efa8f39f1f8c" name="root@localhost:25" url="http:///">
         <fileTransfer host="localhost" port="25" accessType="SFTP">
           <option name="port" value="25" />
         </fileTransfer>
