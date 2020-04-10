@@ -2,13 +2,16 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="fc9cd8b3-eaff-4f95-8647-a132e2fda45a" name="root@localhost:25" url="http:///">
-        <fileTransfer accessType="SFTP" sshConfigId="bb0d98dc-97dc-4389-bbce-86a7b92da7ca" sshConfig="root@localhost:25" />
+        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="bb0d98dc-97dc-4389-bbce-86a7b92da7ca" sshConfig="root@localhost:25" />
       </webServer>
       <webServer id="1b131cf8-58e8-4e69-ac64-37f17c30f35f" name="root@localhost:25" url="http:///">
-        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="e933a2f5-fc5a-46fa-be2b-da9edffeac4e" sshConfig="root@localhost:25" />
+        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="bb0d98dc-97dc-4389-bbce-86a7b92da7ca" sshConfig="root@localhost:25" />
       </webServer>
       <webServer id="5dd111e0-3591-4642-98af-0eb42cf63544" name="root@localhost:25" url="http:///">
-        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
+        <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
+      </webServer>
+      <webServer id="b0688e1d-e1d2-4275-84a1-648d5b56e9f4" name="root@localhost:25" url="http:///">
+        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="8697590c-67a5-4cd5-b46d-cb2f315f937d" sshConfig="root@localhost:25 password" />
       </webServer>
     </option>
   </component>
