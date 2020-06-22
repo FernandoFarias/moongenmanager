@@ -23,16 +23,19 @@
         <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
       </webServer>
       <webServer id="0af7a569-0659-4726-8c16-b693aafa5a00" name="root@localhost:25 (7)" url="http:///">
-        <fileTransfer accessType="SFTP" sshConfigId="7317a46c-bfb0-4630-8add-56d74a53243f" sshConfig="root@localhost:25 password" />
+        <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
       </webServer>
       <webServer id="5b05401e-bfaf-4f50-8cdf-ab67d4c2fabf" name="root@localhost:25" url="http:///">
-        <fileTransfer accessType="SFTP" sshConfigId="deb1a064-c1ef-441f-810e-9ce209c07385" sshConfig="root@localhost:25 password" />
+        <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
       </webServer>
       <webServer id="76740598-bce3-4f1d-aae3-1346a74c48bd" name="root@localhost:25" url="http:///">
-        <fileTransfer accessType="SFTP" sshConfigId="fdb6cd20-8bb5-4968-a57a-f7ac72659cee" sshConfig="root@localhost:25 password" />
+        <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
       </webServer>
       <webServer id="fb987f64-c9e9-4a43-b941-da02bd86d49b" name="root@localhost:25" url="http:///">
-        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="c868d4d9-e1ce-4f3c-91ed-4411f98bf8de" sshConfig="root@localhost:25 password" />
+        <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
+      </webServer>
+      <webServer id="11d94936-63d2-47d5-8dc4-eb54f99044ee" name="root@localhost:25" url="http:///">
+        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="c077bf08-b5d0-4f06-8281-97ecf9d9179e" sshConfig="root@localhost:25 password" />
       </webServer>
     </option>
   </component>

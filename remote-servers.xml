@@ -2,8 +2,7 @@
   <component name="RemoteServers">
     <remote-server name="Docker" type="docker">
       <configuration>
-        <option name="apiUrl" value="unix:///var/run/docker.sock" />
-        <option name="certificatesPath" />
+        <option name="apiUrl" value="https://138.121.71.88:2376" />
       </configuration>
     </remote-server>
   </component>
