@@ -44,7 +44,10 @@
         <fileTransfer accessType="SFTP" sshConfigId="724550be-a677-4de4-85b3-73f44df3910f" sshConfig="root@localhost:25 password" />
       </webServer>
       <webServer id="b7187be9-b903-4f7f-abf5-fc7f9e51a2cd" name="root@localhost:25 (13)" url="http:///">
-        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="ae024773-947c-43fd-9a19-018526c44d42" sshConfig="root@localhost:25 password" />
+        <fileTransfer accessType="SFTP" sshConfigId="ae024773-947c-43fd-9a19-018526c44d42" sshConfig="root@localhost:25 password" />
+      </webServer>
+      <webServer id="54f7f1af-64d2-4bba-a472-811cf1900cae" name="root@localhost:25" url="http:///">
+        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="cdd2734b-ca9c-4f16-90ad-c631d3a46594" sshConfig="root@localhost:25 password" />
       </webServer>
     </option>
   </component>
