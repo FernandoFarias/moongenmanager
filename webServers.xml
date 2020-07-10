@@ -25,23 +25,26 @@
       <webServer id="0af7a569-0659-4726-8c16-b693aafa5a00" name="root@localhost:25 (7)" url="http:///">
         <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
       </webServer>
-      <webServer id="5b05401e-bfaf-4f50-8cdf-ab67d4c2fabf" name="root@localhost:25" url="http:///">
+      <webServer id="5b05401e-bfaf-4f50-8cdf-ab67d4c2fabf" name="root@localhost:25 (8)" url="http:///">
         <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
       </webServer>
-      <webServer id="76740598-bce3-4f1d-aae3-1346a74c48bd" name="root@localhost:25" url="http:///">
+      <webServer id="76740598-bce3-4f1d-aae3-1346a74c48bd" name="root@localhost:25 (9)" url="http:///">
         <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
       </webServer>
-      <webServer id="fb987f64-c9e9-4a43-b941-da02bd86d49b" name="root@localhost:25" url="http:///">
+      <webServer id="fb987f64-c9e9-4a43-b941-da02bd86d49b" name="root@localhost:25 (10)" url="http:///">
         <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
       </webServer>
-      <webServer id="11d94936-63d2-47d5-8dc4-eb54f99044ee" name="root@localhost:25" url="http:///">
+      <webServer id="11d94936-63d2-47d5-8dc4-eb54f99044ee" name="root@localhost:25 (11)" url="http:///">
         <fileTransfer accessType="SFTP" sshConfigId="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" sshConfig="root@localhost:25 password" />
       </webServer>
       <webServer id="e2b555ae-6f8a-4e81-93be-e3d964f0d9e9" name="dpdadm@200.237.196.186:2200" url="http:///">
         <fileTransfer accessType="SFTP" host="200.237.196.186" port="2200" sshConfigId="d8119fd2-2b4d-44c1-86bd-0de37d7c0459" sshConfig="dpdadm@200.237.196.186:2200 password" />
       </webServer>
-      <webServer id="cc72fdbb-bdaa-4342-bc9a-8a953cd140f0" name="root@localhost:25" url="http:///">
-        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="724550be-a677-4de4-85b3-73f44df3910f" sshConfig="root@localhost:25 password" />
+      <webServer id="cc72fdbb-bdaa-4342-bc9a-8a953cd140f0" name="root@localhost:25 (12)" url="http:///">
+        <fileTransfer accessType="SFTP" sshConfigId="724550be-a677-4de4-85b3-73f44df3910f" sshConfig="root@localhost:25 password" />
+      </webServer>
+      <webServer id="b7187be9-b903-4f7f-abf5-fc7f9e51a2cd" name="root@localhost:25 (13)" url="http:///">
+        <fileTransfer accessType="SFTP" host="localhost" port="25" sshConfigId="ae024773-947c-43fd-9a19-018526c44d42" sshConfig="root@localhost:25 password" />
       </webServer>
     </option>
   </component>
