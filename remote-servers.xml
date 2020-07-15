@@ -11,5 +11,10 @@
         <option name="apiUrl" value="http://200.237.196.186:9443" />
       </configuration>
     </remote-server>
+    <remote-server name="Docker RNP" type="docker">
+      <configuration>
+        <option name="apiUrl" value="http://200.159.254.235:8443" />
+      </configuration>
+    </remote-server>
   </component>
 </application>
