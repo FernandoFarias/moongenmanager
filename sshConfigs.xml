@@ -4,6 +4,7 @@
       <sshConfig authType="PASSWORD" host="localhost" id="bb0d98dc-97dc-4389-bbce-86a7b92da7ca" port="25" customName="root@localhost:25" nameFormat="CUSTOM" username="root" />
       <sshConfig authType="PASSWORD" host="localhost" id="495e727c-b8ac-4ed3-9bed-26f6e59f0ab0" port="25" nameFormat="DESCRIPTIVE" username="root" />
       <sshConfig authType="PASSWORD" host="200.237.196.186" id="d8119fd2-2b4d-44c1-86bd-0de37d7c0459" port="2200" nameFormat="DESCRIPTIVE" username="dpdadm" />
+      <sshConfig authType="PASSWORD" host="200.159.254.235" id="a0506f33-d27d-4cf1-90e1-097779d6a2ae" port="22" nameFormat="DESCRIPTIVE" username="farias" />
     </configs>
   </component>
 </application>
